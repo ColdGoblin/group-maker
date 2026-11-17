@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מחלק הקבוצות</title>
+  <meta name="description" content="כלי הוראה פשוט: מדביקים רשימת שמות ומחלקים אותם לקבוצות באקראי.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">דלג לתוכן</a>
+
+  <header class="top">
+    <img src="assets/logo.svg" alt="" width="56" height="56">
+    <div>
+      <h1>מחלק הקבוצות</h1>
+      <p class="sub">מדביקים רשימת שמות, בוחרים כמה קבוצות, ומקבלים חלוקה אקראית.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- תמונה 1: מופנית מה-HTML. הנתיב יחסי למקום של index.html -->
+    <img class="hero" src="assets/images/hero.svg" alt="" width="480" height="160">
+
+    <section class="card" aria-labelledby="in-title">
+      <h2 id="in-title">1. רשימת שמות</h2>
+      <label for="names">שם אחד בכל שורה</label>
+      <textarea id="names" rows="8" placeholder="דנה&#10;יוסי&#10;מיכל&#10;אחמד"></textarea>
+      <p class="hint" id="count" aria-live="polite">0 שמות ברשימה</p>
+      <button type="button" class="link" id="sample">טעינת רשימה לדוגמה</button>
+    </section>
+
+    <section class="card" aria-labelledby="opt-title">
+      <h2 id="opt-title">2. איך לחלק?</h2>
+      <fieldset>
+        <legend class="sr">שיטת החלוקה</legend>
+        <label class="radio"><input type="radio" name="mode" value="groups" checked> מספר קבוצות</label>
+        <label class="radio"><input type="radio" name="mode" value="size"> גודל קבוצה</label>
+      </fieldset>
+      <label for="num" id="num-label">כמה קבוצות?</label>
+      <input id="num" type="number" min="1" max="50" value="3" inputmode="numeric">
+      <button type="button" class="primary" id="go">חלקו לקבוצות</button>
+    </section>
+
+    <section class="card" aria-labelledby="out-title">
+      <h2 id="out-title">3. התוצאה</h2>
+      <p class="hint" id="msg" role="status" aria-live="polite">עדיין לא חולק. מלאו רשימה ולחצו על הכפתור.</p>
+      <div id="result" class="groups"></div>
+    </section>
+  </main>
+
+  <section class="assets-panel" aria-labelledby="assets-title">
+    <details>
+      <summary id="assets-title">בדיקת קבצי עזר (assets)</summary>
+      <p>הדף מנסה לטעון כל קובץ מהרשימה. אם קובץ הועלה למקום הלא נכון, תראו כאן ✗.</p>
+      <ul id="asset-list"></ul>
+      <pre class="tree" dir="ltr">index.html
+style.css
+app.js
+assets/
+  logo.svg
+  images/
+    hero.svg
+    empty.svg
+    pattern.svg</pre>
+    </details>
+  </section>
+
+  <footer>
+    <p>השמות נשארים בדפדפן שלכם בלבד: הם לא נשמרים ולא נשלחים לשום מקום.</p>
+    <!-- ההדגמה בסדנה: משנים את המספר בשורה הבאה ישירות ב-GitHub, יוצרים commit, ובודקים שהאתר החי התעדכן. -->
+    <p class="version">גרסה <span id="version">1</span></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
